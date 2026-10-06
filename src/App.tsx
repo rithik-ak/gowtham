@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useState, type FormEvent, type ReactNode } from 'react'
-import { ArrowDownUp, ArrowLeft, ArrowUpRight, Bell, Building2, Check, CheckCircle2, ChevronDown, CircleAlert, ClipboardList, Clock3, Download, Droplets, Eye, EyeOff, Filter, GraduationCap, Lightbulb, LogOut, MapPin, Plus, Search, Settings, ShieldCheck, Sofa, Trash2, Users, Wrench, X, Sun, Moon } from 'lucide-react'
+import { ArrowDownUp, ArrowLeft, ArrowUpRight, Bell, Building2, Check, CheckCircle2, ChevronDown, CircleAlert, ClipboardList, Clock3, Download, Droplets, Eye, EyeOff, Filter, GraduationCap, ImageIcon, Lightbulb, LogOut, MapPin, Plus, Search, Settings, ShieldCheck, Sofa, Trash2, Users, Wrench, X, Sun, Moon } from 'lucide-react'
 
 type Role = 'student' | 'admin'
 type AuthMode = 'register' | 'login' | 'admin-request'
@@ -94,14 +94,7 @@ const starterIssues: Issue[] = [
 ]
 
 
-function fileToBase64(file: File): Promise<string> {
-  return new Promise((resolve, reject) => {
-    const reader = new FileReader();
-    reader.readAsDataURL(file);
-    reader.onload = () => resolve(reader.result as string);
-    reader.onerror = (error) => reject(error);
-  });
-}
+
 
 function readIssues(): Issue[] {
   try {
