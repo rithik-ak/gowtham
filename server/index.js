@@ -430,7 +430,7 @@ async function start() {
   if (isProduction && (!sessionSecret || sessionSecret.length < 32)) throw new Error('Set SESSION_SECRET to a random value of at least 32 characters in production.')
   if (process.env.ADMIN_PASSWORD) adminPasswordHash = await bcrypt.hash(process.env.ADMIN_PASSWORD, 12)
   await loadStore()
-  app.listen(port, '127.0.0.1', () => console.log(`PEC CAMPUS CARE API listening on http://127.0.0.1:${port}`))
+  app.listen(port, () => console.log(`PEC CAMPUS CARE API listening on port ${port}`))
 }
 
 start().catch((error) => {
